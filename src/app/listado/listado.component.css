@@ -1,0 +1,14 @@
+/* Estilos para el gradiente de color morado */
+.button-gradient {
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer; /* Cursor al pasar el ratón */
+  }
+  
+  /* Estilos adicionales para el efecto al pasar el ratón */
+  .button-gradient:hover {
+    background-image: linear-gradient(to right, #2575fc, #6a11cb);
+  }

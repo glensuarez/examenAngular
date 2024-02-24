@@ -1,0 +1,83 @@
+
+
+    <!-- Fila para agregar nuevo elemento -->
+    <tr>
+      <td><input type="text" [(ngModel)]="nuevoElemento.name" placeholder="Nombre"></td>
+      <td><input type="text" [(ngModel)]="nuevoElemento.description" placeholder="Descripción"></td>
+      <td><input type="text" [(ngModel)]="nuevoElemento.telefono" placeholder="Teléfono" [ngModelOptions]="{standalone: true}"></td>
+       <!-- Agregar input para el teléfono -->
+      <td><input type="text" [(ngModel)]="nuevoElemento.pais" placeholder="País"></td> <!-- Agregar input para el país -->
+      <td>
+        <button class="button-gradient" (click)="agregarElemento()">Agregar</button>
+      </td>
+    </tr>
+
+<table>
+  
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Teléfono</th>
+      <th>País</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Filas de elementos existentes -->
+    <tr *ngFor="let elemento of elementos">
+      <td>{{ elemento.id }}</td>
+      <td>{{ elemento.name }}</td>
+      <td>{{ elemento.description }}</td>
+      <td>{{ elemento.telefono | telefonoFormat }}</td> <!-- Agregar columna para el teléfono -->
+      <td>{{ elemento.pais }}</td> <!-- Agregar columna para el país -->
+      <td>
+       <!--  <button (click)="editarElemento(elemento)">Editar</button> -->
+        <button class="button-gradient" (click)="eliminarElemento(elemento.id)">Eliminar</button>
+      </td>
+    </tr>
+
+    <!-- Paginador -->
+<tr>
+  <td colspan="2">  <!-- Ajusta el colspan según el número de columnas en tu tabla -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
